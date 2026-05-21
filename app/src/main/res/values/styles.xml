@@ -2,20 +2,12 @@
 
     <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:statusBarColor">@color/brand_dark</item>
-        <item name="android:navigationBarColor">@color/brand_dark</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/safe_area_light</item>
+        <item name="android:navigationBarColor">@color/safe_area_light</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
-    </style>
-
-    <style name="SplashTheme" parent="android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:statusBarColor">@color/brand_dark</item>
-        <item name="android:navigationBarColor">@color/brand_dark</item>
-        <item name="android:windowBackground">@color/arewa_green</item>
+        <item name="android:windowBackground">@color/safe_area_light</item>
     </style>
 
 </resources>

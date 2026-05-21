@@ -1,0 +1,10 @@
+Camera cutout / notch fix applied.
+
+What changed:
+1. MainActivity and SplashActivity now apply safe-area padding from system bars and display cutout.
+2. Splash screen is no longer fullscreen, so the logo will not sit behind the camera cutout.
+3. activity_main.xml and activity_splash.xml now have root IDs for safe-area handling.
+4. The website URL remains https://arewascope.com.ng/ebooks/
+5. Signing keys/GitHub secrets do not need to change.
+
+Upload this corrected source to GitHub and run the GitHub Actions build again.
