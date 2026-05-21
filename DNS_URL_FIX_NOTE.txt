@@ -1,0 +1,25 @@
+DNS URL FIX
+
+The WebView URL was changed from:
+
+https://www.arewascope.com.ng/ebooks/
+
+to:
+
+https://arewascope.com.ng/ebooks/
+
+This fixes the WebView error:
+net::ERR_NAME_NOT_RESOLVED
+
+Reason:
+Your domain is loading from the non-www version. The previous app was trying to open the www version.
+
+What to do:
+1. Upload/replace these updated source files in your GitHub repository.
+2. Go to GitHub Actions.
+3. Run the Android build workflow again.
+4. Download the new APK/AAB artifact.
+5. Install the new APK for testing.
+
+Important:
+Do not upload your private signing files to GitHub. Keep using GitHub Secrets for signing.

@@ -1,0 +1,16 @@
+This version fixes the Gradle Android resource linking error:
+
+resource color/brand_green not found
+resource color/brand_dark not found
+
+The fix was added in:
+app/src/main/res/values/colors.xml
+
+Added:
+<color name="brand_green">#008D46</color>
+<color name="brand_dark">#006B35</color>
+
+The app URL remains:
+https://arewascope.com.ng/ebooks/
+
+Signing keys/secrets remain the same. Do not change your GitHub secrets.

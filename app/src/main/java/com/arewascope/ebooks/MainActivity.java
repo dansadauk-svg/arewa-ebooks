@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    private static final String HOME_URL = "https://www.arewascope.com.ng/ebooks/";
+    private static final String HOME_URL = "https://arewascope.com.ng/ebooks/";
     private static final int FILE_CHOOSER_REQUEST_CODE = 1001;
 
     private WebView webView;

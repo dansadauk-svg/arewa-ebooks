@@ -1,5 +1,10 @@
 <resources>
+    <!-- Main app/theme colours -->
     <color name="arewa_green">#008D46</color>
     <color name="arewa_green_dark">#006B35</color>
     <color name="white">#FFFFFF</color>
+
+    <!-- Compatibility aliases used by some generated/older resource files -->
+    <color name="brand_green">#008D46</color>
+    <color name="brand_dark">#006B35</color>
 </resources>
