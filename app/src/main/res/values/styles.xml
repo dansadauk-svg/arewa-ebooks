@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/arewa_green_dark</item>
+        <item name="android:navigationBarColor">@color/arewa_green</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="SplashTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:statusBarColor">@color/arewa_green</item>
+        <item name="android:navigationBarColor">@color/arewa_green</item>
+        <item name="android:windowBackground">@color/arewa_green</item>
+    </style>
+
+</resources>
