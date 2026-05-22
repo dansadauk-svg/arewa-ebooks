@@ -16,10 +16,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="false">
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2796673279706676~6151912746" />
-
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"

@@ -1,7 +1,9 @@
 <resources>
-    <color name="arewa_green">#008D46</color>
-    <color name="brand_green">#008D46</color>
-    <color name="brand_dark">#004D2A</color>
-    <color name="safe_area_light">#EAF8F1</color>
+    <color name="brand_teal">#008C83</color>
+    <color name="brand_teal_dark">#006B63</color>
+    <color name="arewa_green">#008C83</color>
+    <color name="brand_green">#008C83</color>
+    <color name="brand_dark">#006B63</color>
+    <color name="safe_area_light">#008C83</color>
     <color name="white">#FFFFFF</color>
 </resources>

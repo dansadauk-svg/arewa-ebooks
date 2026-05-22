@@ -32,10 +32,6 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-
 public class MainActivity extends Activity {
 
     private static final String HOME_URL = "https://arewascope.com.ng/ebooks/";
@@ -45,7 +41,6 @@ public class MainActivity extends Activity {
     private WebView webView;
     private ProgressBar progressBar;
     private View splashOverlay;
-    private AdView adView;
     private ValueCallback<Uri[]> filePathCallback;
 
     private boolean minimumSplashTimeDone = false;
@@ -54,7 +49,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLightSystemBars();
+        setBrandSystemBars();
         setContentView(R.layout.activity_main);
 
         View rootLayout = findViewById(R.id.rootLayout);
@@ -63,10 +58,8 @@ public class MainActivity extends Activity {
         webView = findViewById(R.id.mainWebView);
         progressBar = findViewById(R.id.pageProgress);
         splashOverlay = findViewById(R.id.splashOverlay);
-        adView = findViewById(R.id.adView);
 
         setupWebView();
-        setupAdMob();
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             minimumSplashTimeDone = true;
@@ -82,20 +75,18 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void setLightSystemBars() {
+    private void setBrandSystemBars() {
         Window window = getWindow();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.setStatusBarColor(getResources().getColor(R.color.safe_area_light));
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(getResources().getColor(R.color.brand_teal));
+            window.setNavigationBarColor(getResources().getColor(R.color.brand_teal));
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            window.setNavigationBarColor(getResources().getColor(R.color.safe_area_light));
-            window.getDecorView().setSystemUiVisibility(
-                    window.getDecorView().getSystemUiVisibility()
-                            | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-            );
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int flags = window.getDecorView().getSystemUiVisibility();
+            flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            window.getDecorView().setSystemUiVisibility(flags);
         }
     }
 
@@ -198,15 +189,6 @@ public class MainActivity extends Activity {
         });
 
         webView.setDownloadListener(createDownloadListener());
-    }
-
-    private void setupAdMob() {
-        MobileAds.initialize(this, initializationStatus -> {});
-
-        if (adView != null) {
-            AdRequest adRequest = new AdRequest.Builder().build();
-            adView.loadAd(adRequest);
-        }
     }
 
     private void hideSplashWhenReady() {
@@ -426,18 +408,10 @@ public class MainActivity extends Activity {
         if (webView != null) {
             webView.onResume();
         }
-
-        if (adView != null) {
-            adView.resume();
-        }
     }
 
     @Override
     protected void onPause() {
-        if (adView != null) {
-            adView.pause();
-        }
-
         if (webView != null) {
             webView.onPause();
         }
@@ -447,10 +421,6 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        if (adView != null) {
-            adView.destroy();
-        }
-
         if (webView != null) {
             webView.destroy();
         }

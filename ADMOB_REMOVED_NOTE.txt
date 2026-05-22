@@ -1,0 +1,6 @@
+AdMob has been fully removed because the app handles ebook payments.
+Removed:
+- Google Mobile Ads SDK dependency
+- AdMob App ID from AndroidManifest.xml
+- AdView banner from layout
+- AdMob imports and code from MainActivity.java

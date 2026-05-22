@@ -5,5 +5,7 @@ Replace these files on GitHub mobile:
 4. app/src/main/res/values/styles.xml
 5. app/src/main/res/layout/activity_main.xml
 6. app/src/main/java/com/arewascope/ebooks/MainActivity.java
+7. app/src/main/res/drawable-nodpi/logo.png
+8. gradle.properties
 
 Then run Actions again.
